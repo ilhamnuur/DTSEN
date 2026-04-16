@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+httpx
+opencv-python
+torch
+scikit-learn
+pydantic

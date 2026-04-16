@@ -1,0 +1,29 @@
+# Models
+*.pkl
+*.pth
+*.pt
+*.onnx
+*.h5
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+.venv
+env/
+venv/
+
+# AI Keys
+.gemini_key
+.openai_key
+
+# Node
+node_modules/
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db
