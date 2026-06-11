@@ -1,7 +1,15 @@
 import { useState, useRef, useEffect } from 'react';
 import './index.css';
 
-const API_BASE = 'http://127.0.0.1:7005/api';
+const getApiBase = () => {
+  const hostname = window.location.hostname || '127.0.0.1';
+  // If served on Docker frontend port (5867), target the Docker backend port (7005).
+  // Otherwise, target the local backend port (8000).
+  const port = window.location.port === '5867' ? '7005' : '8000';
+  return `http://${hostname}:${port}/api`;
+};
+
+const API_BASE = getApiBase();
 
 function App() {
   const [nik, setNik] = useState('');

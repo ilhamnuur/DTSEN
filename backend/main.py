@@ -14,13 +14,13 @@ from core.bps_client import fetch_captcha, submit_desil, HEADERS
 
 app = FastAPI(title="DTSEN Fullstack API")
 
-# Setup CORS to allow React Frontend to connect
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173", "http://127.0.0.1:5173",
         "http://localhost:5867", "http://127.0.0.1:5867"
     ],
+    allow_origin_regex=r"https?://(localhost|127\.0\.0\.1)(:\d+)?",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -148,4 +148,6 @@ async def api_submit_manual(req: SubmitManualRequest):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+    host = os.getenv("HOST", "0.0.0.0")
+    port = int(os.getenv("PORT", "8000"))
+    uvicorn.run("main:app", host=host, port=port, reload=True)
