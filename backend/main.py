@@ -69,7 +69,18 @@ async def api_submit_auto(req: SubmitAutoRequest):
     dob_api = f"{parts[2]}-{parts[1]}-{parts[0]}" if len(parts) == 3 else req.dob
 
     if not LOCAL_MODEL:
-        return {"success": False, "message": "Model AI belum diload. Jalankan setup retrain terlebih dahulu."}
+        async with httpx.AsyncClient(headers=HEADERS) as client:
+            c_key, c_raw, _ = await fetch_captcha(client)
+            if c_key:
+                img_src = "data:image/jpeg;base64," + c_raw if not c_raw.startswith("data:image") else c_raw
+                return {
+                    "success": False,
+                    "fallback_manual": True,
+                    "message": "Model AI belum diload. Silakan masukkan Captcha secara manual.",
+                    "captcha_key": c_key,
+                    "captcha_img": img_src
+                }
+            return {"success": False, "message": "Model AI belum diload & gagal mengambil captcha."}
 
     max_attempts = 5
     async with httpx.AsyncClient(headers=HEADERS) as client:

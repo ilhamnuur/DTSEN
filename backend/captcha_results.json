@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "last_updated": "2026-06-11T11:22:38.329329",
+    "total_captchas": 1,
+    "solved_count": 0
+  },
+  "captchas": [
+    {
+      "index": 0,
+      "captcha_key": "eyJpdiI6ImZvaVRTQzFnbitDUUZRdTRnNU9kWnc9PSIsInZhbHVlIjoiaEV5T2pydE8vSDZJektIUG96cytTVmJaclFHMTh0MWxKb1B6QWI3ckhuWDVLQkNhZnd3dTZmYmgwMjVBczd1R01MS0JpbjFJR1M5aWRrRCtMQkdzalRhZzZpQ01OM2IyZk4wS2lRY1RCMHc9IiwibWFjIjoiMjcwYzFlNmZhNTAxM2FkOWQxZDNhYmMwOWM4ZDdlNTdmMDlhMzkwY2ZlMDRlZjljM2FmODc1NTcyN2Q1MjYwOSIsInRhZyI6IiJ9",
+      "solved_text": null,
+      "image_path": "D:\\Apps\\DTSEN\\backend\\images\\captcha_0000.jpg",
+      "image_filename": "captcha_0000.jpg",
+      "timestamp": "2026-06-11T11:22:38.329279",
+      "solver": null,
+      "confidence": null
+    }
+  ]
+}
