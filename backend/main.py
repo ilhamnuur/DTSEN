@@ -17,7 +17,10 @@ app = FastAPI(title="DTSEN Fullstack API")
 # Setup CORS to allow React Frontend to connect
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=[
+        "http://localhost:5173", "http://127.0.0.1:5173",
+        "http://localhost:5867", "http://127.0.0.1:5867"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

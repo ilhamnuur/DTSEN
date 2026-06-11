@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     container_name: dtsen_backend
     ports:
-      - "8000:8000"
+      - "7005:8000"
     restart: always
 
   frontend:
@@ -14,7 +14,7 @@ services:
       dockerfile: Dockerfile
     container_name: dtsen_frontend
     ports:
-      - "80:80"
+      - "5867:80"
     depends_on:
       - backend
     restart: always

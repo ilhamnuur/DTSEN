@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import './index.css';
 
-const API_BASE = 'http://127.0.0.1:8000/api';
+const API_BASE = 'http://127.0.0.1:7005/api';
 
 function App() {
   const [nik, setNik] = useState('');
